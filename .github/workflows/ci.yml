@@ -25,19 +25,19 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: npm install
     - name: Fetch *nix dependencies
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.os == 'ubuntu-22.04'
       run: |
         sudo apt update
         sudo apt install -y libboost-all-dev
     - name: Install Dependencies
       run: npm install
     - name: Generate Prebuilds
-      if: github.event_name == 'release' && matrix.node == '20' && matrix.os == 'ubuntu-latest' && github.repository == 'turtlecoin/node-cryptonote-util'
+      if: github.event_name == 'release' && matrix.node == '20' && matrix.os == 'ubuntu-22.04' && github.repository == 'turtlecoin/node-cryptonote-util'
       run: |
         npm install -g prebuild
         prebuild --all --strip -u ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to NPM
-      if: github.event_name == 'release' && matrix.node == '20' && matrix.os == 'ubuntu-latest' && github.repository == 'turtlecoin/node-cryptonote-util'
+      if: github.event_name == 'release' && matrix.node == '20' && matrix.os == 'ubuntu-22.04' && github.repository == 'turtlecoin/node-cryptonote-util'
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: npm publish

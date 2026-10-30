@@ -15,7 +15,7 @@ jobs:
         node: ['18', '20', '22', '24']
     name: ${{ matrix.os }} - Node ${{ matrix.node }} Test
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - uses: actions/setup-node@v1
       name: Set up Node
       with:
@@ -23,7 +23,7 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - name: Install Windows Node.js Build Tools
       if: matrix.os == 'windows-latest'
-      run: npm install -g windows-build-tools --vs2015
+      run: npm install
     - name: Fetch *nix dependencies
       if: matrix.os == 'ubuntu-latest'
       run: |

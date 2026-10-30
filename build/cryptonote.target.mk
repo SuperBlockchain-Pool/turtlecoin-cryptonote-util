@@ -7,18 +7,15 @@ DEFS_Debug := \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
-	'-DV8_DEPRECATION_WARNINGS' \
-	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_GLIBCXX_USE_CXX11_ABI=1' \
-	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
+	'-D_LARGEFILE_SOURCE' \
 	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION' \
 	'-DDEBUG' \
-	'-D_DEBUG' \
-	'-DV8_ENABLE_CHECKS'
+	'-D_DEBUG'
 
 # Flags passed to all source files.
 CFLAGS_Debug := \
@@ -37,33 +34,31 @@ CFLAGS_C_Debug :=
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
 	-std=gnu++17 \
-	-std=c++14 \
+	-std=c++17 \
 	-fexceptions \
 	-frtti
 
 INCS_Debug := \
-	-I/home/less/.cache/node-gyp/18.20.4/include/node \
-	-I/home/less/.cache/node-gyp/18.20.4/src \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/openssl/config \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/openssl/openssl/include \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/uv/include \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/zlib \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/v8/include \
+	-I/root/.cache/node-gyp/20.20.2/include/node \
+	-I/root/.cache/node-gyp/20.20.2/src \
+	-I/root/.cache/node-gyp/20.20.2/deps/openssl/config \
+	-I/root/.cache/node-gyp/20.20.2/deps/openssl/openssl/include \
+	-I/root/.cache/node-gyp/20.20.2/deps/uv/include \
+	-I/root/.cache/node-gyp/20.20.2/deps/zlib \
+	-I/root/.cache/node-gyp/20.20.2/deps/v8/include \
 	-I$(srcdir)/src \
 	-I$(srcdir)/src/contrib/epee/include \
 	-I$(srcdir)/src/contrib/variant/include \
-	-I$(srcdir)/../nan
+	-I$(srcdir)/node_modules/nan
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=cryptonote' \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
-	'-DV8_DEPRECATION_WARNINGS' \
-	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_GLIBCXX_USE_CXX11_ABI=1' \
-	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
+	'-D_LARGEFILE_SOURCE' \
 	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
@@ -86,22 +81,22 @@ CFLAGS_C_Release :=
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
 	-std=gnu++17 \
-	-std=c++14 \
+	-std=c++17 \
 	-fexceptions \
 	-frtti
 
 INCS_Release := \
-	-I/home/less/.cache/node-gyp/18.20.4/include/node \
-	-I/home/less/.cache/node-gyp/18.20.4/src \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/openssl/config \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/openssl/openssl/include \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/uv/include \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/zlib \
-	-I/home/less/.cache/node-gyp/18.20.4/deps/v8/include \
+	-I/root/.cache/node-gyp/20.20.2/include/node \
+	-I/root/.cache/node-gyp/20.20.2/src \
+	-I/root/.cache/node-gyp/20.20.2/deps/openssl/config \
+	-I/root/.cache/node-gyp/20.20.2/deps/openssl/openssl/include \
+	-I/root/.cache/node-gyp/20.20.2/deps/uv/include \
+	-I/root/.cache/node-gyp/20.20.2/deps/zlib \
+	-I/root/.cache/node-gyp/20.20.2/deps/v8/include \
 	-I$(srcdir)/src \
 	-I$(srcdir)/src/contrib/epee/include \
 	-I$(srcdir)/src/contrib/variant/include \
-	-I$(srcdir)/../nan
+	-I$(srcdir)/node_modules/nan
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/main.o \
